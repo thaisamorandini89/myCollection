@@ -10,8 +10,14 @@ const PLACEHOLDER_COLOR_DARKEN = color(DARKBACKGROUND).lighten(0.25).hex();
 export const Cadastro: React.FC = () =>{
     const [security, setSecurity] = useState<boolean>(true);
     const [securityConfirm, setSecurityConfirm] = useState<boolean>(true);
+    const [loading, setLoading] = useState<boolean>(false);
     const changeSecurity =()=> setSecurity(currenty=>!currenty);
     const changeSecurityConfirm =()=> setSecurityConfirm(currenty=>!currenty);
+    const sendForm = async () =>{
+        setLoading(true);
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        setLoading(false);
+    }
     return(
         <>
             <Header title={'Cadastro'}/>
@@ -27,9 +33,7 @@ export const Cadastro: React.FC = () =>{
                     <Input keyboardType={'default'} placeholder={'Confirme a Senha'} secureTextEntry={securityConfirm} placeholderTextColor={PLACEHOLDER_COLOR} hasIconRight/>
                     <FontAwesome5 name={`eye${securityConfirm?'':'-slash'}`} size={26} color={PLACEHOLDER_COLOR} onPress={changeSecurityConfirm}/>
                 </ContainerInput>
-                <Button onPress={()=>{}}>
-                    <ButtonTitle>CADASTRAR</ButtonTitle>
-                </Button>
+                <Button title={'Cadastrar'} loading={loading} onPress={sendForm}/>
             </Container>
         </>
     )

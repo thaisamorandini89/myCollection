@@ -14,17 +14,8 @@ export default function App() {
     <ThemeProvider theme={DarkTheme}>
       <StatusBar style="light" backgroundColor={color(DARKBACKGROUND).darken(0.6).hex()} translucent={false}/>
       <BaseContainer>
-          <Perfil />
+          <Cadastro />
       </BaseContainer>
     </ThemeProvider>
   );
 }
-
-/* const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-}); */

@@ -1,7 +1,7 @@
 import React from "react";
-import { ActivityIndicator, TouchableOpacityProps } from "react-native";
+import { TouchableOpacityProps } from "react-native";
 import { DARKBACKGROUND } from "../../styles/colors";
-import { Button, ButtonTitle } from "./styles"
+import { Button, ButtonTitle, LoadingIndicator } from "./styles"
 
 interface DefaultButton extends  TouchableOpacityProps{
     title: string;
@@ -15,7 +15,7 @@ export const DefaultButton: React.FC<DefaultButton> = ({
     }) =>{
     return(
         <Button {...props}>
-            <ActivityIndicator color={DARKBACKGROUND} size={'small'}/>
+            {loading&&(<LoadingIndicator color={DARKBACKGROUND} size={'small'}/>)} 
             <ButtonTitle>
                 {title}
             </ButtonTitle>

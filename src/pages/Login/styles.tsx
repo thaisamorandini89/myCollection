@@ -2,6 +2,7 @@ import styled from "styled-components/native";
 import color from "color";
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import {css} from "styled-components/native";
+import { DefaultButton } from "../../components/BaseButton";
 
 export const Container = styled.View`
     flex: 1;
@@ -44,21 +45,9 @@ export const Title = styled.Text`
     color: ${props=>props.theme.colors.secondary};
     margin-bottom: 10px;
 `
-export const Button = styled.TouchableOpacity`
-    color: ${props=>props.theme.colors.secondary};
-    background-color: ${props=>props.theme.colors.primary};
-    padding: 10px 20px;
-    border-radius: ${props=>props.theme.measures.radius}px;
-    margin: 5px 0;
-    margin-top: 25px;
-    align-items: center;
-    justify-content: center;
-    align-self: stretch;
-`
 
-export const ButtonTitle = styled.Text`
-    color: ${props=>props.theme.colors.background};
-    font-weight: bold;
+export const Button = styled(DefaultButton)`
+    margin-top: 25px;
 `
 
 export const Switch = styled.Switch``
